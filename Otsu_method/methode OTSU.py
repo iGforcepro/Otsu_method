@@ -4,13 +4,10 @@ import matplotlib.pyplot as plt
 def otsu_threshold(image):
    
     hist, bins = np.histogram(image.flatten(), bins=256, range=(0, 255))
-    
     prob = hist / np.sum(hist)
-    
     
     max_variance = 0
     optimal_threshold = 0
-
     
     for t in range(1, 256):
         w0 = np.sum(prob[:t])
