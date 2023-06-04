@@ -17,10 +17,8 @@ def otsu_threshold(image):
         w1 = np.sum(prob[t:])
         mu0 = np.sum(prob[:t] * np.arange(t)) / w0
         mu1 = np.sum(prob[t:] * np.arange(t, 256)) / w1
-
-      
+         
         variance = w0 * w1 * ((mu0 - mu1) ** 2)
-
         
         if variance > max_variance:
             max_variance = variance
